@@ -1,0 +1,1 @@
+function fullQuality(t){const e=t.dataset.priority||0;setTimeout((function(){const e=t.querySelector(".webp-img"),o=t.querySelector(".nowebp-img"),l=e.dataset.img,i=o.dataset.img;e.srcset=l,o.src=i}),1+300*e)}function toggleMinImg(){const t=document.querySelectorAll(".toggle-img--js");for(let e=0;e<t.length;e++){fullQuality(t[e])}}toggleMinImg();

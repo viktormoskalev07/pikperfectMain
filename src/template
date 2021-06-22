@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Amazing page</title>
+  <link rel="stylesheet" href="css/main.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+</head>
+
+<body class="body">
+<div class="main-wrapper">
+ 
+
+<main class="main">
+  <div class="container">
+    main  
+    
+    <div class="row">
+      @@include('i/img.html',{
+        src:'Custom-Wedding-Albums',
+        type:'png',
+        alt:'album design 1 ',
+        height:'800',
+        width:'333',
+        priority:'0'
+      })
+      @@include('i/img.html',{
+        src:'Custom-Wedding-Albums',
+        type:'jpg',
+        alt:'album design 1 ',
+        height:'1',
+        width:'2',
+        priority:'1'
+      })
+      @@include('i/img.html',{
+        src:'Custom-Wedding-Albums',
+        alt:'album design 1 ',
+        type:'jpg',
+        height:'300',
+        width:'333',
+        priority:'2'
+      })
+    </div>
+ 
+ 
+  </div>
+
+</main>
+ 
+</div>
+
+
+
+<script src="js/main.js"> </script>
+</body>
+
+</html>
