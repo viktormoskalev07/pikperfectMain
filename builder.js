@@ -1,6 +1,6 @@
-const resizeto = 150 ;//если изображение больше чем minWidth* сделать его resizeto*
+const resizeto = 50 ;//если изображение больше чем minWidth* сделать его resizeto*
 const minWidth =320;  //если изображение больше чем minWidth* сделать его resizeto*
-const divider = 3;      // если изображение меньше чем minWidth* поделить его на divider* ставьте 1 если не нужно менять сайз
+const divider = 5;      // если изображение меньше чем minWidth* поделить его на divider* ставьте 1 если не нужно менять сайз
 const baseFolder = './dist/images/towebp'; 
  
 
@@ -56,9 +56,12 @@ images.forEach(img => {
     const filename =  path.basename(img ,ext);
     const dirname =path.dirname(img); 
     const outputMin = dirname +'/'+'min-'+ filename + ext; 
+    const output480 = dirname +'/'+'480-'+ filename + ext; 
     const outputWebp = dirname +'/'+ filename +   '.webp'; 
-    const outputWebpMin = dirname +'/'+'min-'+ filename +  '.webp';  
-    if((ext=='.jpg'||ext=='.jpeg'||ext=='.png'||ext=='.gif')&&!filename.includes('min-')){
+    const outputWebpMin = dirname +'/'+'min-'+ filename +  '.webp'; 
+    const outputWebp480 = dirname +'/'+'480-'+ filename +  '.webp'; 
+
+    if((ext=='.jpg'||ext=='.jpeg'||ext=='.png'||ext=='.gif')&&!filename.includes('min-')&&!filename.includes('480-')){
         
          
         const oldSize = sizeOf(img).width;
@@ -90,9 +93,35 @@ images.forEach(img => {
             console.log(chalk.red(err));
         } 
     });  
+    if(oldSize>470){
+         sharp(img).webp().resize(480).toFile(outputWebp480, (err,info)=>{
+        if(err){
+            console.log(chalk.red(err));
+        }  
+     });  
+         sharp(img).resize(480).toFile(output480, (err,info)=>{
+        if(err){
+            console.log(chalk.red(err));
+        }  
+     });  
+    } else {
+        sharp(img).webp().resize(oldSize).toFile(outputWebp480, (err,info)=>{
+            if(err){
+                console.log(chalk.red(err));
+            } 
+         });
+         sharp(img).resize(oldSize).toFile(output480, (err,info)=>{
+            if(err){
+                console.log(chalk.red(err));
+            }  
+         });  
+        console.log(chalk.red('image smaller then 480!!!'));
+    }
+ 
+  
 
     } else {
-        if (ext!=='.svg'&& ext!=='.webp'&&!filename.includes('min-')){
+        if (ext!=='.svg'&& ext!=='.webp'&&!filename.includes('min-')&&!filename.includes('480-')){
             console.log(ext)
             console.error(chalk.red('      builder.js            error in extname                         is it img ?  '+  img));
         }
