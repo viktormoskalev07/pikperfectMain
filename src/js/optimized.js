@@ -56,7 +56,10 @@
                           jq.onload=function(){ 
                             addScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js');
                             addScript(' https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js  ');
-                            addScript(' js/owl.carousel.min.js ');
+                            if(place.dataset.carousel=='true'){ 
+                               addScript(' js/owl.carousel.min.js ');
+                            }
+                           
                             addScript('  js/main.js ');
                           }
                                     

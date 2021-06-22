@@ -247,14 +247,7 @@
                             </a>
                             <p class="small">No advance payment required</p>
                         </div>
-                        <div class="col image-col px-0">
-                            <!-- <picture>
-                                <source srcset="images/Professional-Photo-Albums_mob.webp" alt="Professional photo albums laying on table" type="image/webp" media="(max-width: 991.98px)">
-                                <source srcset="images/Professional-Photo-Albums.webp" alt="Professional photo albums laying on table" type="image/webp" media="(min-width: 992px)">
-                                <source srcset="images/Professional-Photo-Albums_mob.jpg" alt="Professional photo albums laying on table" type="image/jpeg" media="(max-width: 991.98px)">
-                                <source srcset="images/Professional-Photo-Albums.jpg" alt="Professional photo albums laying on table" type="image/jpeg" media="(min-width: 992px)">
-                                <img src="images/Professional-Photo-Albums-placeholder.jpg" alt="Professional photo albums laying on table" width="978" height="565">
-                            </picture> -->
+                        <div class="col image-col px-0"> 
                             @@include('i/img.html',{
                                 src:'Professional-Photo-Albums',
                                 type:'jpg',
@@ -904,6 +897,6 @@
         </div> 
 
         <script src="js/optimized.js">   </script>
-        <div class="d-none" id='script-place'> </div>
+        <div data-carousel='true' class="d-none" id='script-place'> </div> 
     </body>
 </html>
