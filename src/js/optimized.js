@@ -1,6 +1,13 @@
 
           //images
+          const mediaQuery = window.matchMedia('(max-width: 480px)'); 
+console.log(mediaQuery.matches);
+  let baseDelay=10;
+  if(mediaQuery.matches){
+    baseDelay=400;
+  }
           function fullQuality(item){ 
+
             const priority  = item.dataset.priority||0;
             setTimeout(function() {
             const webp = item.querySelector('.webp-img');
@@ -9,7 +16,7 @@
             const fullNoWebp = noWebp.dataset.img;  
               webp.srcset=fullWebp; 
               noWebp.src=fullNoWebp;
-            }, 1+300*priority);
+            }, 1+baseDelay*priority);
           }
           function toggleMinImg(){ 
               const pictures = document.querySelectorAll('.toggle-img--js');  
@@ -65,6 +72,8 @@
                                     
             })
 //scripts
+
+
 
 
 
