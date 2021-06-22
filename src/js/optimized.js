@@ -1,7 +1,6 @@
 
           //images
-          const mediaQuery = window.matchMedia('(max-width: 480px)'); 
-console.log(mediaQuery.matches);
+          const mediaQuery = window.matchMedia('(max-width: 480px)');  
   let baseDelay=10;
   if(mediaQuery.matches){
     baseDelay=400;
@@ -65,8 +64,7 @@ console.log(mediaQuery.matches);
                             addScript(' https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js  ');
                             if(place.dataset.carousel=='true'){ 
                                addScript(' js/owl.carousel.min.js ');
-                            }
-                           
+                            } 
                             addScript('  js/main.js ');
                           }
                                     

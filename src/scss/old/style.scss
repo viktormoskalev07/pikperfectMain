@@ -901,7 +901,7 @@ h6{
     display: block;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(../../images/play-btn.svg);
+    background-image: url(../images/play-btn.svg);
     cursor: pointer;
     visibility: visible;
     opacity: 1;
@@ -1064,7 +1064,7 @@ h6{
     content: '';
     height: 1.7925rem;
     width: 2.04625rem;
-    background-image: url(../../images/icon-arrow-left.svg);
+    background-image: url(../images/icon-arrow-left.svg);
     background-repeat: no-repeat;
     background-position: center;
     display: block;
@@ -1856,7 +1856,7 @@ h6{
         margin-top: -0.1rem;
         margin-right: 0.1rem;
         display: block;
-        background-image: url(../../images/hamburger.svg);
+        background-image: url(../images/hamburger.svg);
         width:1.6rem;
         height: 1.6rem;
         background-repeat: no-repeat;
@@ -1864,7 +1864,7 @@ h6{
         background-position: center;
     }
     .header.menu-open .menu-btn{
-        background-image: url(../../images/icon-close.svg);
+        background-image: url(../images/icon-close.svg);
     }
     .header.menu-open {
         background-color: #FFFFFF;
