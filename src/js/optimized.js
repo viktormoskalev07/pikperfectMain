@@ -81,7 +81,7 @@
             window.addEventListener('load', function(){
                 toggleMinImg();
                 addFont();       
-                scriptAsync(300);                
+                scriptAsync(1700);                
             })
 
 
