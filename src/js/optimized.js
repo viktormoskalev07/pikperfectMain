@@ -1,9 +1,9 @@
 
-          //images
+  //images
           const mediaQuery = window.matchMedia('(max-width: 480px)');  
   let baseDelay=10;
   if(mediaQuery.matches){
-    baseDelay=40;
+    baseDelay=4000;
   }
   function srcSeter(tag){
     tag.srcset=tag.dataset.img;
@@ -47,37 +47,43 @@
                   document.querySelector('head').append(globalFont);
                 }, 1);  
             } 
-              //fonts
-            
-
+              //fonts 
+              
       //scripts
-            window.addEventListener('load', function(){
-                toggleMinImg();
-                addFont();
+      function scriptAsync(timeout){
                 const place = document.querySelector('#script-place');  
                 function addScript(path){
                     const someJs = document.createElement('script'); 
                     someJs.src=path; 
                     place.appendChild(someJs);       
                 }  
-                 const jq = document.createElement('script');
+                const jq = document.createElement('script');
                         jq.src='https://code.jquery.com/jquery-3.5.1.min.js';
 
                         setTimeout(() => {
                             place.appendChild(jq);
-                        }, 100);
+                        }, timeout);
                         
-                          jq.onload=function(){ 
-                            addScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js');
-                            addScript(' https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js  ');
-                            if(place.dataset.carousel=='true'){ 
-                               addScript(' js/owl.carousel.min.js ');
-                            } 
-                            addScript('  js/main.js ');
-                          }
-                                    
-            })
+                   jq.onload=function(){ 
+                     addScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js');
+                     addScript(' https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js  ');
+                     if(place.dataset.carousel=='true'){ 
+                       addScript(' js/owl.carousel.min.js ');
+                     } 
+                     addScript('  js/main.js ');
+                   } 
+      }
+             
+
 //scripts
+
+
+            window.addEventListener('load', function(){
+                toggleMinImg();
+                addFont();       
+                scriptAsync(3000);                
+            })
+
 
 
 

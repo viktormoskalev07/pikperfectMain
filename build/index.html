@@ -236,10 +236,12 @@
                                 <source srcset="images/image-texture.webp" alt="image-texture" type="image/webp">  
                                 <img loading="lazy" src="images/image-texture.jpg" alt="image-texture" width="650" height="560">
                             </picture>
-                            <div class="bg-image">
-  
-                            </div>
-                
+                            <picture  data-priority='1' class=' bg-image toggle-img--js '> 
+    <source class='webp-img-480' media="(max-width: 480px)" srcset="images/towebp/min-image-texture.webp" data-img="images/towebp/480-image-texture.webp"   type="image/webp"> 
+    <source class='nowebp-img-480' media="(max-width: 480px)" srcset="images/towebp/min-image-texture.jpg" data-img="images/towebp/480-image-texture.jpg"   type="image/webp"> 
+    <source class='webp-img' srcset="images/towebp/min-image-texture.webp" data-img="images/towebp/image-texture.webp"   type="image/webp"> 
+    <img class='nowebp-img' src="images/towebp/min-image-texture.jpg" data-img="images/towebp/image-texture.jpg"  alt="image-texture">
+</picture>   
                             <h3>Preserving Memories</h3>
                             <p class="lead">Our design specialists work with you to create a beautiful photo album, to cherish for life.</p>
                             <a href="#" class="btn btn-outline-white">
@@ -248,7 +250,7 @@
                             <p class="small">No advance payment required</p>
                         </div>
                         <div class="col image-col px-0"> 
-                            <picture  data-priority='0' class='  toggle-img--js '> 
+                            <picture  data-priority='1' class=' @@class toggle-img--js '> 
     <source class='webp-img-480' media="(max-width: 480px)" srcset="images/towebp/min-Professional-Photo-Albums.webp" data-img="images/towebp/480-Professional-Photo-Albums.webp"   type="image/webp"> 
     <source class='nowebp-img-480' media="(max-width: 480px)" srcset="images/towebp/min-Professional-Photo-Albums.jpg" data-img="images/towebp/480-Professional-Photo-Albums.jpg"   type="image/webp"> 
     <source class='webp-img' srcset="images/towebp/min-Professional-Photo-Albums.webp" data-img="images/towebp/Professional-Photo-Albums.webp"   type="image/webp"> 
@@ -499,7 +501,8 @@
                 <section class="section-video">
                     <div class="container-fluid">
                         <div class="video-wrap">
-                            <video preload="none" loop class="video" poster="images/Premium-Photo-Albums.jpg">
+        
+                            <video preload="none" loop class="video" poster="images/towebp/Premium-Photo-Albums.jpg">
                                 <source src="images/Premium-Photo-Albums.mp4" type="video/mp4" />
                                 <source src="images/Premium-Photo-Albums.ogg" type="video/ogg">
                             </video>

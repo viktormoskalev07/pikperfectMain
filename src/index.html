@@ -236,10 +236,13 @@
                                 <source srcset="images/image-texture.webp" alt="image-texture" type="image/webp">  
                                 <img loading="lazy" src="images/image-texture.jpg" alt="image-texture" width="650" height="560">
                             </picture>
-                            <div class="bg-image">
-  
-                            </div>
-                
+                            @@include('i/img.html',{
+                                src:'image-texture',
+                                type:'jpg',
+                                alt:'image-texture', 
+                                priority:'1',
+                                class:'bg-image'
+                              }) 
                             <h3>Preserving Memories</h3>
                             <p class="lead">Our design specialists work with you to create a beautiful photo album, to cherish for life.</p>
                             <a href="#" class="btn btn-outline-white">
@@ -254,7 +257,7 @@
                                 alt:'Professional photo albums laying on table',
                                 height:'565',
                                 width:'978',
-                                priority:'0'
+                                priority:'1'
                               })
                         </div>
                     </div>
@@ -501,7 +504,8 @@
                 <section class="section-video">
                     <div class="container-fluid">
                         <div class="video-wrap">
-                            <video preload="none" loop class="video" poster="images/Premium-Photo-Albums.jpg">
+        
+                            <video preload="none" loop class="video" poster="images/towebp/Premium-Photo-Albums.jpg">
                                 <source src="images/Premium-Photo-Albums.mp4" type="video/mp4" />
                                 <source src="images/Premium-Photo-Albums.ogg" type="video/ogg">
                             </video>

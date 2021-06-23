@@ -1,6 +1,4 @@
-const resizeto = 50 ;//если изображение больше чем minWidth* сделать его resizeto*
-const minWidth =320;  //если изображение больше чем minWidth* сделать его resizeto*
-const divider = 5;      // если изображение меньше чем minWidth* поделить его на divider* ставьте 1 если не нужно менять сайз
+const newSize = 5 ; 
 const baseFolder = './dist/images/towebp'; 
  
 
@@ -23,13 +21,10 @@ ncp.limit = 16;
           return console.error(err);
         }
        });
-       console.log(chalk.green('build...'));
+       console.log(chalk.green('finish , wait a second ..'));
  } 
  
-function makeImages(){
-
-
-
+function makeImages(){ 
 const getFiles = function (dir, files_){
     
   files_ = files_ || [];
@@ -45,8 +40,8 @@ const getFiles = function (dir, files_){
     return files_;
 };
 
-console.log(chalk.green('images build min to:'+resizeto+' px'));
-
+console.log(chalk.green('images build min to:'+newSize+' px'));
+ 
 const images = getFiles(baseFolder);
 let current =0;
 let max= images.length+1;
@@ -59,20 +54,14 @@ images.forEach(img => {
     const output480 = dirname +'/'+'480-'+ filename + ext; 
     const outputWebp = dirname +'/'+ filename +   '.webp'; 
     const outputWebpMin = dirname +'/'+'min-'+ filename +  '.webp'; 
-    const outputWebp480 = dirname +'/'+'480-'+ filename +  '.webp'; 
+    const outputWebp480 = dirname +'/'+'480-'+ filename +  '.webp';  
 
     if((ext=='.jpg'||ext=='.jpeg'||ext=='.png'||ext=='.gif')&&!filename.includes('min-')&&!filename.includes('480-')){
         
          
         const oldSize = sizeOf(img).width;
-        let newSize = oldSize;
-
-       
-        if (newSize > minWidth){
-          newSize =resizeto;
-        } else {
-          newSize= Math.round(newSize/divider);
-        }
+        
+ 
         console.log (img +  ' file '+current+' from '+max+' change width from: ',chalk.blue(oldSize+'px'),'to', chalk.green(newSize+'px'));
        
      sharp(img)
@@ -87,18 +76,25 @@ images.forEach(img => {
         if(err){
             console.log(chalk.red(err));
         } 
-    });  
+    }); 
+
     sharp(img).webp().resize(newSize).toFile(outputWebpMin, (err,info)=>{
         if(err){
             console.log(chalk.red(err));
         } 
     });  
+
+
+        //sizes in pixel
+        
+
     if(oldSize>470){
          sharp(img).webp().resize(480).toFile(outputWebp480, (err,info)=>{
         if(err){
             console.log(chalk.red(err));
         }  
      });  
+
          sharp(img).resize(480).toFile(output480, (err,info)=>{
         if(err){
             console.log(chalk.red(err));
@@ -117,7 +113,7 @@ images.forEach(img => {
          });  
         console.log(chalk.red('image smaller then 480!!!'));
     }
- 
+          //sizes in pixel 
   
 
     } else {
@@ -134,6 +130,10 @@ images.forEach(img => {
 }
  
  makeImages();
- 
- copyToBuild();
+ console.log('it can work in background');
+ setTimeout(() => {
+    
+    copyToBuild();
+ }, 2000);
+
  
