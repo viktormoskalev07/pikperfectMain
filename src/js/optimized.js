@@ -3,7 +3,7 @@
           const mediaQuery = window.matchMedia('(max-width: 480px)');  
   let baseDelay=10;
   if(mediaQuery.matches){
-    baseDelay=4000;
+    baseDelay=500;
   }
   function srcSeter(tag){
     tag.srcset=tag.dataset.img;
