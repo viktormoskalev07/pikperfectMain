@@ -242,17 +242,20 @@
                                 alt:'Wedding album examples on table',
                                 height:'565',
                                 width:'978',
-                                priority:'4'
+                                priority:'0'
                               }) 
+                           
                         </div>
                         <div class="col content-col">
-                            <picture class="bg-image">
-                                <source media="(max-width: 991.98px)" srcset="images/image-texture-2-mob.webp" alt="image-texture-2" type="image/webp">
-                                <source media="(min-width: 992px)" srcset="images/image-texture-2.webp" alt="image-texture-2" type="image/webp">
-                                <source media="(max-width: 991.98px)" srcset="images/image-texture-2-mob.jpg" alt="image-texture-2" type="image/jpeg">
-                                <source media="(min-width: 992px)" srcset="images/image-texture-2.jpg" alt="image-texture-2" type="image/jpeg">
-                                <img loading="lazy" src="images/image-texture-2-mob.jpg" alt="image-texture-2" width="650" height="560">
-                            </picture>
+                            @@include('i/img.html',{
+                                src:'image-texture-2',
+                                type:'jpg',
+                                alt:'texture',
+                                height:'565',
+                                width:'978',
+                                priority:'0',
+                                class:'bg-image'
+                              }) 
                             <h1>Wedding Albums</h1>
                             <p>Collaborate with our design specialists to create a wedding album that transforms your big day into enduring memories.</p>
                             <a href="#" class="btn btn-green-opacity">
